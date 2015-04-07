@@ -17,8 +17,6 @@ do.update <- function(dataset=NULL, full=FALSE) {
         dataset <- match.arg(dataset, .dataset$name, several.ok=TRUE)
     }
 
-    need.datalist <- FALSE
-
     need.update <- .source$dataset %in% dataset
     if (!full) {
         need.update <- need.update & (.source$season == current.season)
