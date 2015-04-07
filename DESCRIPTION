@@ -1,0 +1,9 @@
+Package: fbdata
+Version: 0.2014.1
+Title: Historical football data
+Description: Historical football data, including full-time and half-time
+    results for several European leagues.
+Author: Ernest A C <nfdisco@gmail.com>
+Maintainer: Ernest A C <nfdisco@gmail.com>
+License: GPL-3
+LazyData: True

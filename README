@@ -1,0 +1,50 @@
+fbdata
+======
+
+R package with to historical football data, including full-time and
+half-time results, for several European leagues, back to season 2000-01.
+
+Copyright
+---------
+
+All the data included in this package has been obtained from the
+Football-Data.co.uk web site, which claims full copyright over the raw data
+files in their original format.  In order to avoid a potential copyright
+infringement these files are not distributed with the package.
+
+Usage
+-----
+
+To see a list of available data sets:
+
+    > data(package='fbdata')
+    Data sets in package ‘fbdata’:
+    
+    scores.d1               Bundesliga scores & match statistics
+    scores.e0               Premier League scores & match statistics
+    scores.f1               Ligue 1 scores & match statistics
+    scores.i1               Serie A scores & match statistics
+    scores.n1               Eredivisie scores & match statistics
+    scores.p1               Primeira Liga scores & match statistics
+    scores.sp1              La Liga scores & match statistics
+
+To load a specific data set:
+
+    > data(scores.d1)
+    > nrow(scores.d1)
+    [1] 4527
+
+Use do.update() to update the data sets with the most recent data.  The
+first update after installing the package must be a full update,
+i.e. do.update(full=TRUE).  Subsequent updates will only fetch the data
+files that have changed since the last update.
+
+Note that for the update feature to work the user must have write permission
+in the package's directory, which is usually not the case when the package
+is installed system-wide.
+
+Installation
+------------
+
+    $ make doc
+    $ make install
