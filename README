@@ -1,8 +1,8 @@
 fbdata
 ======
 
-R package with to historical football data, including full-time and
-half-time results, for several European leagues, back to season 2000-01.
+R package with historical football data, including full-time and half-time
+results, for several European leagues, going back to season 2000-01.
 
 Copyright
 ---------
