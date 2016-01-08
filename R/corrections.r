@@ -6,6 +6,7 @@
 #' @param data character vector.
 #'
 #' @return Patched data.
+#' @import tools
 #' @noRd
 
 apply.patches <- function(fname, data) {
