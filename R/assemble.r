@@ -36,9 +36,9 @@ assemble <- function(dataset, save=FALSE) {
 
     for (i in 1:length(fname)) {
 
-        ## delete empty fields first to avoid errors
         lines <- readLines(fname[i], n=-1, encoding='latin1')
-        lines <- sub(',+$','',lines)
+        lines <- apply.patches(fname[i], lines)
+        lines <- sub(',+$','',lines)    # delete empty fields to avoid errors
 
         data <- read.csv(textConnection(lines),
                          sep=',', quote='\"', strip.white=TRUE, as.is=TRUE)
