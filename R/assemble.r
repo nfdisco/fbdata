@@ -5,13 +5,11 @@
 #' optionally saving it on disk in the package's data directory.
 #'
 #' @param dataset name of the data set.
-#' @param save logical.  If true, the output is saved in the package's
-#' data directory.
 #'
 #' @return A data frame.
 #' @noRd
 
-assemble <- function(dataset, save=FALSE) {
+assemble <- function(dataset) {
 
     set <- .source$dataset == dataset
 
@@ -68,18 +66,6 @@ assemble <- function(dataset, save=FALSE) {
     }
 
     rownames(data.agg) <- NULL
-
-    if (save) {
-        fname <- sprintf('%s.rda', .dataset[.dataset$name == dataset, ]$path)
-
-        if (!file.exists(dirname(fname)))
-            dir.create(dirname(fname), recursive=TRUE)
-
-        assign(dataset, data.agg)
-        save(list=dataset, file=fname)
-
-        info("updated: ", dataset)
-    }
 
     invisible(data.agg)
 }

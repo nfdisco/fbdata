@@ -1,15 +1,17 @@
 
 #' Update data sets
 #'
-#' Updates data sets by fetching new data from the Internet.
+#' Updates data sets by fetching new data from the Internet.  By
+#' default, only results from the current season are updated.
 #'
 #' @param dataset character vector.  Names of data sets to update, or
 #' \code{NULL} to update every data set.
-#' @param full If true, do a full update, including non-current
+#' @param all.seasons If true, do a full update, including non-current
 #' seasons.
-#' @export
+#' @seealso \code{\link{rebuild.datasets}} \code{\link{fbdata-datasets}}
+#' @export update.scores
 
-update.scores <- function(dataset=NULL, full=FALSE) {
+update.scores <- function(dataset=NULL, all.seasons=FALSE) {
 
     if (is.null(dataset)) {
         dataset <- .dataset$name
@@ -18,7 +20,7 @@ update.scores <- function(dataset=NULL, full=FALSE) {
     }
 
     need.update <- .source$dataset %in% dataset
-    if (!full) {
+    if (!all.seasons) {
         need.update <- need.update & (.source$season == current.season)
     }
 
@@ -28,7 +30,8 @@ update.scores <- function(dataset=NULL, full=FALSE) {
     changed <- replace(need.update, which(need.update), changed == 1)
 
     for (name in unique(.source$dataset[changed])) {
-        assemble(name, save=TRUE)
+        write.rdata(name, assemble(name))
+        info('updated: ', name)
     }
 
     if (any(changed)) {
@@ -36,8 +39,39 @@ update.scores <- function(dataset=NULL, full=FALSE) {
     }
 }
 
+#' Rebuild data sets
+#'
+#' Rebuilds R data files from the raw data files.
+#'
+#' Data sets must be reloaded with \code{\link{data}} for any changes
+#' to make effect.  In general, it is not necessary to call this
+#' function after an update, because \code{\link{update.scores}}
+#' already rebuilds any data sets that need to be rebuilt.
+#' @seealso \code{\link{update.scores}} \code{\link{fbdata-datasets}}
+#' @export
 
-#' (Over)Write metadata
+rebuild.datasets <- function() {
+    for (name in unique(.source$dataset)) {
+        write.rdata(name, assemble(name))
+        info('written: ', name)
+    }
+    write.metadata()
+}
+
+#' Write data object in the package data directory.
+#' @noRd
+
+write.rdata <- function(name, data) {
+    fname <- file.path(datadir, sprintf('%s.rda', name))
+
+    if (!file.exists(dirname(fname)))
+        dir.create(dirname(fname), recursive=TRUE)
+
+    assign(name, data)
+    save(list=name, file=fname)         # save a single object named <name>
+}
+
+#' Write metadata
 #' @noRd
 
 write.metadata <- function() {
