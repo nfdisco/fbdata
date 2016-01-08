@@ -34,9 +34,9 @@ To load a specific data set:
     > nrow(scores.d1)
     [1] 4527
 
-Use do.update() to update the data sets with the most recent data.  The
+Use update.scores() to update the data sets with the most recent data.  The
 first update after installing the package must be a full update,
-i.e. do.update(full=TRUE).  Subsequent updates will only fetch the data
+i.e. update.scores(full=TRUE).  Subsequent updates will only fetch the data
 files that have changed since the last update.
 
 Note that for the update feature to work the user must have write permission

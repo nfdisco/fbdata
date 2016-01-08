@@ -9,7 +9,7 @@
 #' seasons.
 #' @export
 
-do.update <- function(dataset=NULL, full=FALSE) {
+update.scores <- function(dataset=NULL, full=FALSE) {
 
     if (is.null(dataset)) {
         dataset <- .dataset$name
