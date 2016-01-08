@@ -2,18 +2,16 @@ fbdata
 ======
 
 R package with historical football data, including full-time and half-time
-results, for several European leagues, going back to season 2000-01.
-
-Copyright
----------
-
-All the data included in this package has been obtained from the
-Football-Data.co.uk web site, which claims full copyright over the raw data
-files in their original format.  In order to avoid a potential copyright
-infringement these files are not distributed with the package.
+results, for several European leagues.
 
 Usage
 -----
+
+After installing the package, use
+
+    > update.scores(all.seasons=TRUE)
+
+to download results from all seasons and to build the data files.
 
 To see a list of available data sets:
 
@@ -30,21 +28,32 @@ To see a list of available data sets:
 
 To load a specific data set:
 
-    > data(scores.d1)
-    > nrow(scores.d1)
-    [1] 4527
+    > data(<dataset>)
 
-Use update.scores() to update the data sets with the most recent data.  The
-first update after installing the package must be a full update,
-i.e. update.scores(full=TRUE).  Subsequent updates will only fetch the data
-files that have changed since the last update.
+To update the data with the latest results from the current season:
 
-Note that for the update feature to work the user must have write permission
-in the package's directory, which is usually not the case when the package
-is installed system-wide.
+    > update.scores()
+
+After that, all data sets that have been updated need to be reloaded.
+
+IMPORTANT: For the update feature to work the user must have write
+permission in the package's directory.
 
 Installation
 ------------
 
     $ make doc
     $ make install
+
+Acknowledgements
+----------------
+
+Thanks to the Football-Data.co.uk web site for publishing up-to-date
+football results in a convenient electronic format.
+
+Copyright
+---------
+
+The Football-Data.co.uk web site claims the copyright of the raw data files
+in their original format.  (These files are not distributed with the
+`fbdata' package).

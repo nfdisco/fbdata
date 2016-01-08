@@ -1,12 +1,12 @@
 #' Historical football data
 #'
 #' This package includes historical football results and match
-#' statistics for several European leagues.  It also provides a way of
-#' keeping the data up-to-date by getting new data from
-#' \href{http://www.football-data.co.uk/}{Football-Data.co.uk}, which
-#' is generally updated on a weekly basis.  Notice that this
-#' particular feature only works when the user has write permission
-#' for the package's directory.
+#' statistics for several European leagues.  It also provides a
+#' mechanism for keeping the data up-to-date by fetching the latest
+#' football results from
+#' \href{http://www.football-data.co.uk/}{Football-Data.co.uk}.  (This
+#' particular feature requires that the package's directory be
+#' writable by the user.)
 #'
 #' @name fbdata-package
 #' @docType package
@@ -16,7 +16,7 @@ NULL
 #'
 #' Football scores and match statistics for several European leagues.
 #'
-#' To use a particular data set, first it must be loaded by calling
+#' To use a particular data set, first it must be loaded with
 #' \code{\link{data}}.
 #'
 #' @section Datasets:
