@@ -1,6 +1,6 @@
 
 baseurl <- "http://www.football-data.co.uk"
-current.season <- '2013-14'
+current.season <- '2014-15'
 
 #' Raw data
 #'
@@ -32,6 +32,7 @@ mmz4281/1011/D1.csv   scores.d1   2010-11  d1
 mmz4281/1112/D1.csv   scores.d1   2011-12  d1
 mmz4281/1213/D1.csv   scores.d1   2012-13  d1
 mmz4281/1314/D1.csv   scores.d1   2013-14  d1
+mmz4281/1415/D1.csv   scores.d1   2014-15  d1
 mmz4281/0001/E0.csv   scores.e0   2000-01  e0
 mmz4281/0102/E0.csv   scores.e0   2001-02  e0
 mmz4281/0203/E0.csv   scores.e0   2002-03  e0
@@ -46,6 +47,7 @@ mmz4281/1011/E0.csv   scores.e0   2010-11  e0
 mmz4281/1112/E0.csv   scores.e0   2011-12  e0
 mmz4281/1213/E0.csv   scores.e0   2012-13  e0
 mmz4281/1314/E0.csv   scores.e0   2013-14  e0
+mmz4281/1415/E0.csv   scores.e0   2014-15  e0
 mmz4281/0001/I1.csv   scores.i1   2000-01  i1
 mmz4281/0102/I1.csv   scores.i1   2001-02  i1
 mmz4281/0203/I1.csv   scores.i1   2002-03  i1
@@ -60,6 +62,7 @@ mmz4281/1011/I1.csv   scores.i1   2010-11  i1
 mmz4281/1112/I1.csv   scores.i1   2011-12  i1
 mmz4281/1213/I1.csv   scores.i1   2012-13  i1
 mmz4281/1314/I1.csv   scores.i1   2013-14  i1
+mmz4281/1415/I1.csv   scores.i1   2014-15  i1
 mmz4281/0001/SP1.csv  scores.sp1  2000-01  sp1
 mmz4281/0102/SP1.csv  scores.sp1  2001-02  sp1
 mmz4281/0203/SP1.csv  scores.sp1  2002-03  sp1
@@ -74,6 +77,7 @@ mmz4281/1011/SP1.csv  scores.sp1  2010-11  sp1
 mmz4281/1112/SP1.csv  scores.sp1  2011-12  sp1
 mmz4281/1213/SP1.csv  scores.sp1  2012-13  sp1
 mmz4281/1314/SP1.csv  scores.sp1  2013-14  sp1
+mmz4281/1415/SP1.csv  scores.sp1  2014-15  sp1
 mmz4281/0001/F1.csv   scores.f1   2000-01  f1
 mmz4281/0102/F1.csv   scores.f1   2001-02  f1
 mmz4281/0203/F1.csv   scores.f1   2002-03  f1
@@ -88,6 +92,7 @@ mmz4281/1011/F1.csv   scores.f1   2010-11  f1
 mmz4281/1112/F1.csv   scores.f1   2011-12  f1
 mmz4281/1213/F1.csv   scores.f1   2012-13  f1
 mmz4281/1314/F1.csv   scores.f1   2013-14  f1
+mmz4281/1415/F1.csv   scores.f1   2014-15  f1
 mmz4281/0001/N1.csv   scores.n1   2000-01  n1
 mmz4281/0102/N1.csv   scores.n1   2001-02  n1
 mmz4281/0203/N1.csv   scores.n1   2002-03  n1
@@ -102,6 +107,7 @@ mmz4281/1011/N1.csv   scores.n1   2010-11  n1
 mmz4281/1112/N1.csv   scores.n1   2011-12  n1
 mmz4281/1213/N1.csv   scores.n1   2012-13  n1
 mmz4281/1314/N1.csv   scores.n1   2013-14  n1
+mmz4281/1415/N1.csv   scores.n1   2014-15  n1
 mmz4281/0001/P1.csv   scores.p1   2000-01  p1
 mmz4281/0102/P1.csv   scores.p1   2001-02  p1
 mmz4281/0203/P1.csv   scores.p1   2002-03  p1
@@ -116,6 +122,7 @@ mmz4281/1011/P1.csv   scores.p1   2010-11  p1
 mmz4281/1112/P1.csv   scores.p1   2011-12  p1
 mmz4281/1213/P1.csv   scores.p1   2012-13  p1
 mmz4281/1314/P1.csv   scores.p1   2013-14  p1
+mmz4281/1415/P1.csv   scores.p1   2014-15  p1
 ', header=TRUE, as.is=TRUE)
 
 
