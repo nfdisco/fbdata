@@ -1,6 +1,5 @@
 
 baseurl <- "http://www.football-data.co.uk"
-current.season <- '2014-15'
 
 #' Raw data
 #'
@@ -317,4 +316,9 @@ extdatadir <- "../inst/extdata"
     })
 
     write.metadata()
+
+    cs <- getOption('current.season', NULL)
+    if (is.null(cs))
+        options(current.season='2014-15')
+
 }

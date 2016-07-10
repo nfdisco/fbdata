@@ -2,7 +2,9 @@
 #' Update data sets
 #'
 #' Updates data sets by fetching new data from the Internet.  By
-#' default, only results from the current season are updated.
+#' default, only results from the current season are updated.  The
+#' value of \code{getOption('current.season')} determines the current
+#' season at run time.
 #'
 #' @param dataset character vector.  Names of data sets to update, or
 #' \code{NULL} to update every data set.
@@ -12,6 +14,10 @@
 #' @export update.scores
 
 update.scores <- function(dataset=NULL, all.seasons=FALSE) {
+
+    current.season <- getOption('current.season', NULL)
+    if (is.null(current.season))
+        stop('required option \'current.season\' not set')
 
     if (is.null(dataset)) {
         dataset <- .dataset$name
