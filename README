@@ -54,6 +54,5 @@ football results in a convenient electronic format.
 Copyright
 ---------
 
-The Football-Data.co.uk web site claims the copyright of the raw data files
-in their original format.  (These files are not distributed with the
-`fbdata' package).
+The Football-Data.co.uk web site claims the copyright of the original CSV
+data files (which are not distributed with the `fbdata' package).
